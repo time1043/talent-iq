@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "env:gen": "sed 's/=.*/=/' .env.development > .env.example",
+    "dev": "dotenvx run -f .env.development -- nodemon src/server.js",
+    "start": "dotenvx run -f .env.production -- node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.0",
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.51.0",
+    "express": "5.1.0",
+    "mongoose": "8.19.1",
+    "nodemon": "^3.1.10"
+  }
+}

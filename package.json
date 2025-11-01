@@ -1,0 +1,15 @@
+{
+  "name": "talent-iq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm --prefix backend install && pnpm --prefix frontend install && pnpm --prefix frontend run build",
+    "start": "pnpm --prefix backend start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.0",
+  "dependencies": {}
+}
