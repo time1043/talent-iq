@@ -1,5 +1,6 @@
 import path from "path";
 import express from "express";
+import { connectDB } from "./lib/mongodb.js";
 
 const PORT = Number(process.env.PORT || 3000);
 const { NODE_ENV } = process.env;
@@ -23,4 +24,14 @@ if (NODE_ENV === "production") {
   });
 }
 
-app.listen(PORT, () => console.log(`Server running: http://localhost:${PORT}`));
+const startServer = async () => {
+  try {
+    await connectDB();
+    app.listen(PORT, () => console.log(`Server run: http://localhost:${PORT}`));
+  } catch (error) {
+    console.error("💥 Error starting the server:", error);
+    process.exit(1);
+  }
+};
+
+startServer();
